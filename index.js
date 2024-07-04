@@ -49,6 +49,8 @@ const connectDB = async () => {
 
 connectDB();
 
+app.use('/', (req, res)=>res.json('Hello World'))
+
 app.use('/posts', postRouter);
 app.use('/auth', authRouter);
 

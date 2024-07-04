@@ -7,16 +7,8 @@
     "start": "nodemon index.js",
     "server": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BTdz2310/agiletech-be.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BTdz2310/agiletech-be/issues"
-  },
-  "homepage": "https://github.com/BTdz2310/agiletech-be#readme",
   "description": "",
   "devDependencies": {
     "nodemon": "^3.1.0"
