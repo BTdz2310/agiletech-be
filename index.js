@@ -16,21 +16,23 @@ const index = http.createServer(app);
 
 app.use(cookieParser());
 
-app.use(cors({
-    credentials: true,
-    origin: `${process.env.URL_FE}`,
-    exposedHeaders: ["Set-Cookie"],
-}));
+// app.use(cors({
+//     credentials: true,
+//     origin: `${process.env.URL_FE}`,
+//     exposedHeaders: ["Set-Cookie"],
+// }));
 
-app.use((req, res, next) => {
+app.use(cors());
 
-    res.setHeader('Access-Control-Allow-Origin', `${process.env.URL_FE}`);
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With,content-type,set-cookie');
-    res.setHeader('Access-Control-Allow-Credentials', true);
+// app.use((req, res, next) => {
 
-    next();
-});  
+//     res.setHeader('Access-Control-Allow-Origin', `${process.env.URL_FE}`);
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//     res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With,content-type,set-cookie');
+//     res.setHeader('Access-Control-Allow-Credentials', true);
+
+//     next();
+// });  
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -49,7 +51,7 @@ const connectDB = async () => {
 
 connectDB();
 
-app.use('/', (req, res)=>res.json('Hello World'))
+app.use('/', (req, res)=>res.json('Hello World1'))
 
 app.use('/posts', postRouter);
 app.use('/auth', authRouter);
