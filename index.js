@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5002;
 
 const connectDB = async () => {
     try{
@@ -50,8 +50,6 @@ const connectDB = async () => {
 }
 
 connectDB();
-
-app.use('/', (req, res)=>res.json('Hello World1'))
 
 app.use('/posts', postRouter);
 app.use('/auth', authRouter);
